@@ -15,7 +15,6 @@ body{
 .containt{
     height: 100%;
     width: 30vw;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: center;
