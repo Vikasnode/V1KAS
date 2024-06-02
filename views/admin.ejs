@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        margin: 0;
+        padding: 0;
+        
+       }
+       .form-container{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+       }
+       .input-filds{
+        border: none;
+        border-bottom: .5px solid black;
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+        text-align: left;
+        font: outline;
+       }
+       .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+       }
+       .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+       }
+       .form-container{
+        border: 1px solid black;
+        padding: 20px;
+        border-radius: 10px;
+       }
+    </style>
+</head>
+<body>
+    <%- include('common/nav');%>
+    <div class="main">
+        
+        <div class="container">
+            <h2>Add Products</h2>
+            <form action="/create" method="post" enctype="multipart/form-data">
+                <div class="form-container">
+                    <input class="input-filds" type="text" name="name" placeholder="Product Name">
+                    <input class="input-filds" type="text" name="mrp" placeholder="Product MRP">
+                    <input class="input-filds" type="" name="description" placeholder="Product Description">
+                    <input class="input-filds" id="file" type="file" name="img">
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+// var input = document.getElementsByClassName("input-filds");
+// console.log(input[1].value)
+
+// input.array.forEach(e => {
+//     addEventListener("oninput"(e)=>{
+
+//     })
+// });
+// for (let i = 0; i < input.length; i++) {
+//    if(input[i].value !== ""){
+//     console.log('working')
+//    }
+    
+// }
+    </script>
+</body>
+</html>

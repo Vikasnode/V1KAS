@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <%- include('common/nav')%>
+    <section class="hero">
+      <div class="container">
+        <h2>Welcome to My E-Commerce Store</h2>
+        <p>Discover the best products at unbeatable prices.</p>
+        <a href="#products" class="btn">Shop Now</a>
+      </div>
+    </section>
+
+    <main>
+      <section id="featured-products" class="container">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+          <% for(let i=0; i < product.length; i++){ %>
+            <div class="product-card">
+              <a href="/product/<%= product[i]._id %>">
+
+                <img src="/uploads/<%= product[i].img %>" alt="<%= product[i].name %>">
+              </a>
+              <h3>
+                <%= product[i].name %>
+              </h3>
+              <p>$<%= product[i].mrp %>
+              </p>
+              <button>Add to Cart</button>
+            </div>
+            <% } %>
+        </div>
+      </section>
+    </main>
+</body>
+
+</html>

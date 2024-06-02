@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+.product-detail {
+    display: flex;
+    gap: 2rem;
+}
+
+.product-images img {
+    max-width: 100%;
+}
+
+.product-info {
+    max-width: 600px;
+}
+
+.product-info h2 {
+    margin: 0 0 1rem;
+}
+
+.product-info .price {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0 0 1rem;
+}
+
+.product-info p {
+    margin: 0 0 1rem;
+}
+
+.product-info button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+<%- include('common/nav')%>
+
+
+    <main>
+        <section class="product-detail container">
+            <div class="product-images">
+                <img src="/uploads/<%= product.img %>" alt="<%= product.name%>">
+                <!-- You can add more images here if needed -->
+            </div>
+            <div class="product-info">
+                <h2><%= product.name%></h2>
+                <p class="price">₹<%= product.mrp%></p>
+                <p><%= product.description %></p>
+                <button>Add to Cart</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
