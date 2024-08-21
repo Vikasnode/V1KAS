@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap: 77px;
+            padding: 20px;
+        }
+
+        .product {
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product h2 {
+            margin-top: 0;
+        }
+
+        .product span {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button,
+        .delet {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button,
+        .delet:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .delete--box{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Product Collection</h1>
+    </header>
+    <main>
+        <% for(var i=0; i< product.length; i++) {%>
+        <div class="product">
+            <div>
+                <a href="/products/<%= product[i]._id %>"><img src="<%= product[i].image_url %>" alt="Product 1">
+                    <h2><%= product[i].produc %></h2>
+                    <span>₹<%= product[i].mrp %></span>
+                    <button>Add to Cart</button>
+                </a>
+            </div>
+
+            <div class="delete--box">
+                <button class="delet" onclick="deleteProduct(`<%= product[i]._id %>`)">Delet</button></div>
+        </div>
+        <% } %>
+        <!-- More products go here -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Product Collection</p>
+    </footer>
+
+
+    <script>
+    function deleteProduct(_id){
+       let result = fetch(`http://localhost:3000/delete/${_id}`,{
+        method:"DELETE",
+       })
+    }
+    </script>
+</body>
+</html>

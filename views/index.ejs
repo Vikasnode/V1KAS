@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1><%= product %></h1>
+  <div>
+    <form action="/submit" method="post">
+      <input type="text" name="product" placeholder="Product Name" class="product">
+      <br>
+      <br>
+      <input type="text" name="mrp" placeholder="MRP" class="mrp"><br><br>
+     Upload Image <input type="file" name="image">
+      <input type="submit">
+    </form>
+  </div>
+
+
+  <div>
+    <a href="/collection">Go To Product Page</a>
+  </div>
+
+</body>
+
+</html>
